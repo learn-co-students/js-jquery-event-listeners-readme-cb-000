@@ -1,27 +1,30 @@
 function getIt() {
-  alert("Hey!");
+  $('p').on('click', function() {
+    alert("Hey!");
+  });
 }
 
 function frameIt() {
-  $('img').addClass('tasty');
+  $('img').on('load', function() {
+    $('img').addClass('tasty');
+  });
 }
 
-function pressIt(e) {
-  if (e.which == 70) {alert('You\'ve selected the letter \'G\'')}
+function pressIt() {
+  $('#typing').keydown(function(e) {
+    if (e.which == 70) alert('You\'ve selected the letter \'G\'');
+  });
 }
 
 function submitIt() {
-  alert('Your form is going to be submitted now.');
+  $([type='submit']).on('submit', function {
+    alert('Your form is going to be submitted now.');
+  });
 }
 
 $(document).ready(function(){
-
-  $('p').on('click', getIt());
-
-  $('img').on('load', frameIt());
-
-  $('#typing').keydown(pressIt(e));
-
-  $([type='submit']).on('submit', submitIt());
-
+  getIt();
+  frameIt();
+  pressIt();
+  submitIt();
 });
