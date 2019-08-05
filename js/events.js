@@ -1,7 +1,29 @@
 //define functions here
+var getIt = () => {
+  $('p').on('click', () => {
+    alert('Ayy lmao')
+  })
+}
 
-$(document).ready(function(){
+var frameIt = () => {
+  $('img').addClass('tasty')
+}
 
-// call functions here
+var pressIt = () => {
+  $(document).on('keydown', key => {
+    key.which === 71 ? alert("You're a lert!") : null
+  })
+}
 
-});
+var submitIt = () => {
+  $('form').on('submit', () => {
+    alert('Your form is going to be submitted now.')
+  })
+}
+
+$(document).ready(() => {
+  getIt()
+  frameIt()
+  pressIt()
+  submitIt()
+})
